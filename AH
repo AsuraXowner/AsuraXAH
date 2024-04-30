@@ -8744,6 +8744,7 @@ local Hidden = false
 
 UserInputService.InputBegan:Connect(function(input, gameProccesedEvent)
 	if input.KeyCode == Enum.KeyCode.M then
+                if UserInputService:GetFocusedTextBox() ~= nil then return end
 		if Hidden==false then
 		game:GetService("TweenService"):Create(PanelGuiTransparencyValue.TextLabel,TweenInfo.new(0.1,Enum.EasingStyle.Linear),{BackgroundTransparency = 1}):Play()
 		game:GetService("TweenService"):Create(PanelGuiTransparencyTextValue.TextLabel,TweenInfo.new(0.1,Enum.EasingStyle.Linear),{BackgroundTransparency = 1}):Play()
